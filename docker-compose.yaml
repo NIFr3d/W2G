@@ -1,11 +1,11 @@
 version: "3"
 services:
   w2g-front:
-    build: ./W2G-Front
+    image: nifr3d/w2g-front:latest
     ports:
       - "80:80"
   w2g-back:
-    build: ./W2G-Back
+    image: nifr3d/w2g-back:latest
     ports:
       - "8080:8080"
       - "8081:8081"
