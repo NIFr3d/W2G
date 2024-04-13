@@ -1,0 +1,15 @@
+version: "3"
+services:
+  w2g-front:
+    build: ./W2G-Front
+    ports:
+      - "80:80"
+  w2g-back:
+    build: ./W2G-Back
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    volumes:
+      - /home/fred/videos:/app/videos
+    environment:
+      VIDEO_DIR: /app/videos
