@@ -1,0 +1,6 @@
+[submodule "W2G-Back"]
+	path = W2G-Back
+	url = https://github.com/NIFr3d/W2G-Back
+[submodule "W2G-Front"]
+	path = W2G-Front
+	url = https://github.com/NIFr3d/W2G-Front
