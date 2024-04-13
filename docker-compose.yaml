@@ -4,6 +4,7 @@ services:
     image: nifr3d/w2g-front:latest
     ports:
       - "80:80"
+    restart: unless-stopped
   w2g-back:
     image: nifr3d/w2g-back:latest
     ports:
@@ -13,3 +14,4 @@ services:
       - /home/fred/videos:/app/videos
     environment:
       VIDEO_DIR: /app/videos
+    restart: unless-stopped
