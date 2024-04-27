@@ -2,11 +2,13 @@ version: "3"
 services:
   w2g-front:
     image: nifr3d/w2g-front:latest
+    container_name: w2g-front
     ports:
       - "80:80"
     restart: unless-stopped
   w2g-back:
     image: nifr3d/w2g-back:latest
+    container_name: w2g-back
     ports:
       - "8080:8080"
       - "8081:8081"
@@ -15,3 +17,9 @@ services:
     environment:
       VIDEO_DIR: /app/videos
     restart: unless-stopped
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 300 w2g-front w2g-back
